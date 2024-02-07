@@ -1,5 +1,5 @@
 {
-    "name": "template-webpack",
+    "name": "rpg combat demo",
     "version": "3.0.0",
     "main": "src/main.js",
     "scripts": {
@@ -8,9 +8,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/phaserjs/template-webpack.git"
+        "url": "git+https://github.com/JarettRoman/rpg-combat-demo.git"
     },
-    "author": "Phaser Studio <support@phaser.io> (https://phaser.io/)",
+    "author": "Jarett Roman <jarettroman@gmail.com> (https://jarettroman.github.io/)",
     "license": "MIT",
     "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
     "bugs": {
