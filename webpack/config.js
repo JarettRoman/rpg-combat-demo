@@ -6,13 +6,21 @@ const webpack = require("webpack");
 module.exports = {
     mode: "development",
     devtool: "eval-source-map",
-    entry: "./src/main.js",
+    entry: "./src/main.ts",
     output: {
         path: path.resolve(process.cwd(), 'dist'),
         filename: "bundle.min.js"
     },
+    resolve: {
+        extensions: [ '.ts', '.tsx', '.js' ]
+    },
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
