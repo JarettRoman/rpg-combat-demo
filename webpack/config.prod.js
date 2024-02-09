@@ -1,13 +1,13 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
-const webpack = require('webpack')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
+const webpack = require('webpack');
 
-const line = '---------------------------------------------------------'
-const msg = '💜💜💜 Tell us about your game! - games@phaser.io 💜💜💜'
-process.stdout.write(`${line}\n${msg}\n${line}\n`)
+const line = '---------------------------------------------------------';
+const msg = '💜💜💜 Tell us about your game! - games@phaser.io 💜💜💜';
+process.stdout.write(`${line}\n${msg}\n${line}\n`);
 
 module.exports = {
   mode: 'production',
@@ -82,4 +82,4 @@ module.exports = {
       ]
     })
   ]
-}
+};
