@@ -1,5 +1,5 @@
 {
-  "name": "rpg combat demo",
+  "name": "rpg-combat-demo",
   "version": "3.0.0",
   "main": "src/main.js",
   "scripts": {
