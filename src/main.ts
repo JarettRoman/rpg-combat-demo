@@ -15,15 +15,9 @@ const config = {
   backgroundColor: '#028af8',
   scale: {
     mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH
+    autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [
-    Boot,
-    Preloader,
-    MainMenu,
-    Game,
-    GameOver
-  ]
+  scene: [Boot, Preloader, MainMenu, Game, GameOver],
 };
 
 export default new Phaser.Game(config);

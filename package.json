@@ -1,49 +1,58 @@
 {
-    "name": "rpg combat demo",
-    "version": "3.0.0",
-    "main": "src/main.js",
-    "scripts": {
-        "dev": "webpack-dev-server --config webpack/config.js --open",
-        "build": "webpack --config webpack/config.prod.js",
-        "lint": "eslint . --ext .ts",
-        "lint:fix": "eslint . --ext .ts --fix"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/JarettRoman/rpg-combat-demo.git"
-    },
-    "author": "Jarett Roman <jarettroman@gmail.com> (https://jarettroman.github.io/)",
-    "license": "MIT",
-    "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
-    "bugs": {
-        "url": "https://github.com/phaserjs/template-webpack/issues"
-    },
-    "homepage": "https://github.com/phaserjs/template-webpack#readme",
-    "devDependencies": {
-        "@babel/core": "^7.23.2",
-        "@babel/preset-env": "^7.23.2",
-        "@typescript-eslint/eslint-plugin": "^6.21.0",
-        "@typescript-eslint/parser": "^6.21.0",
-        "babel-loader": "^9.1.3",
-        "clean-webpack-plugin": "^4.0.0",
-        "copy-webpack-plugin": "^11.0.0",
-        "eslint": "^8.56.0",
-        "eslint-config-standard": "^17.1.0",
-        "eslint-plugin-import": "^2.29.1",
-        "eslint-plugin-n": "^16.6.2",
-        "eslint-plugin-promise": "^6.1.1",
-        "file-loader": "^6.2.0",
-        "html-webpack-plugin": "^5.5.3",
-        "raw-loader": "^4.0.2",
-        "terser-webpack-plugin": "^5.3.9",
-        "ts-loader": "^9.5.1",
-        "typescript": "^5.3.3",
-        "webpack": "^5.89.0",
-        "webpack-cli": "^5.1.4",
-        "webpack-dev-server": "^4.15.1",
-        "webpack-merge": "^5.10.0"
-    },
-    "dependencies": {
-        "phaser": "^3.70.0"
-    }
+  "name": "rpg combat demo",
+  "version": "3.0.0",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config webpack/config.js --open",
+    "build": "webpack --config webpack/config.prod.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JarettRoman/rpg-combat-demo.git"
+  },
+  "author": "Jarett Roman <jarettroman@gmail.com> (https://jarettroman.github.io/)",
+  "license": "MIT",
+  "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
+  "bugs": {
+    "url": "https://github.com/phaserjs/template-webpack/issues"
+  },
+  "homepage": "https://github.com/phaserjs/template-webpack#readme",
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "babel-loader": "^9.1.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-promise": "^6.1.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "raw-loader": "^4.0.2",
+    "terser-webpack-plugin": "^5.3.9",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.10.0"
+  },
+  "dependencies": {
+    "phaser": "^3.70.0"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 80
+  }
 }
