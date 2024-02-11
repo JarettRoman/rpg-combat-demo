@@ -1,11 +1,12 @@
 import { Scene } from 'phaser';
+import { Actor, createActor } from '../Actor';
 
 class TurnQueue {
-  queue: Array<any>;
+  queue: Array<Actor>;
   place: number;
-  constructor (players: Array<any>) {
+  constructor (players: Array<Actor>) {
     this.queue = players.sort((a, b) => {
-      return b.dex - a.dex;
+      return b.stats.dexterity - a.stats.dexterity;
     });
     this.place = 0;
   }
@@ -17,6 +18,7 @@ class TurnQueue {
   setNextPlayer () {
     console.log('shifting to next player in queue');
     this.place = (this.place + 1) % this.queue.length;
+    return this.queue[this.place];
   }
 }
 
@@ -25,27 +27,40 @@ export class Game extends Scene {
     super('Game');
   }
 
-  create () {
-    const playerList = [
-      {
-        name: 'Bob',
-        dex: 10
-      },
-      {
-        name: 'Shirley',
-        dex: 12
-      },
-      {
-        name: 'Quartz',
-        dex: 14
-      },
-      {
-        name: 'Alonzo',
-        dex: 8
-      }
+  createActorList (): Array<Actor> {
+    return [
+      createActor('Cloud', 10, {
+        strength: 10,
+        dexterity: 10,
+        constitution: 10,
+        intelligence: 10,
+        wisdom: 10,
+        charisma: 10
+      }),
+      createActor('Barret', 12, {
+        strength: 12,
+        dexterity: 9,
+        constitution: 14,
+        intelligence: 11,
+        wisdom: 12,
+        charisma: 10
+      }),
+      createActor('Tifa', 9, {
+        strength: 10,
+        dexterity: 14,
+        constitution: 9,
+        intelligence: 12,
+        wisdom: 10,
+        charisma: 11
+      })
     ];
+  }
 
-    const turnQueue = new TurnQueue(playerList);
+  create () {
+    const combatantList = this.createActorList();
+
+    const turnQueue = new TurnQueue(combatantList);
+    let selectedActor = turnQueue.getCurrentPlayer();
 
     this.cameras.main.setBackgroundColor(0x00ff00);
 
@@ -61,11 +76,11 @@ export class Game extends Scene {
     }).setOrigin(0.5);
 
     this.input.keyboard?.on('keydown-A', () => {
-      console.log(turnQueue.getCurrentPlayer());
+      console.log(selectedActor);
     });
 
     this.input.keyboard?.on('keydown-S', () => {
-      turnQueue.setNextPlayer();
+      selectedActor = turnQueue.setNextPlayer();
     });
 
     this.input.once('pointerdown', () => {
