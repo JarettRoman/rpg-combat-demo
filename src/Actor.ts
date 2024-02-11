@@ -37,7 +37,7 @@ export function createActor(
   name: string,
   health: number,
   stats: IActor['stats'],
-  commands: IActor['commands'] = []
+  commands: IActor['commands']
 ): Actor {
   return new Actor({ name, health, stats, commands });
 }

@@ -1,10 +1,10 @@
-import { Scene } from 'phaser';
-import { Actor, createActor } from '../Actor';
+import { Scene, Types } from 'phaser';
+import { Actor, IActor, createActor } from '../Actor';
 
 class TurnQueue {
-  queue: Array<Actor>;
+  queue: Array<IActor>;
   place: number;
-  constructor(players: Array<Actor>) {
+  constructor(players: Array<IActor>) {
     this.queue = players.sort((a, b) => {
       return b.stats.dexterity - a.stats.dexterity;
     });
@@ -87,13 +87,14 @@ export class Game extends Scene {
     const combatantList = this.createActorList();
 
     const turnQueue = new TurnQueue(combatantList);
+
+    const keyboard = this.input.keyboard;
+
     let selectedActor = turnQueue.getCurrentPlayer();
 
     this.cameras.main.setBackgroundColor(0x00ff00);
 
-    this.add.image(
-      512, 384, 'background'
-    ).setAlpha(0.5);
+    this.add.image(512, 384, 'background').setAlpha(0.5);
 
     this.add
       .text(
@@ -119,8 +120,16 @@ export class Game extends Scene {
       selectedActor = turnQueue.setNextPlayer();
     });
 
-    this.input.keyboard?.on('keydown-D', () => {
+    this.input.keyboard?.on('keydown-ONE', () => {
       selectedActor.commands[0]();
+    });
+
+    this.input.keyboard?.on('keydown-TWO', () => {
+      selectedActor.commands[1]();
+    });
+
+    this.input.keyboard?.on('keydown-THREE', () => {
+      selectedActor.commands[2]();
     });
 
     this.input.once('pointerdown', () => {
